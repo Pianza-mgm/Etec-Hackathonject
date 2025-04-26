@@ -1,0 +1,5 @@
+npm i concurrently
+npm init -y
+at the generated JSON{
+	"dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+}
