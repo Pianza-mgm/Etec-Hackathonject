@@ -1,0 +1,78 @@
+@import url('./src/Global/global-var.css');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--global-font-family);
+    color: white;
+}
+body{
+    overflow-y: hidden;
+    height: 100vh;
+}
+main{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wrapper{
+    margin: 0 5vh;
+    height: 100%;
+}
+#content-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    h1{
+        color: var(--theme-color);
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    p{
+        color: black;
+        font-size: 20px;
+    }
+    a{
+        margin-top: 50px;
+        width: 14vw;
+        height: 8vh;
+        background-color: var(--dark-bg-color);
+        border-radius: 10px;
+        border: solid 2px black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 30px;
+        transition: .5s all;
+    }
+    a:hover{
+        background-color: var(--theme-color);
+        color: black;
+        width: 14.5vw;
+        height: 8.25vh;
+        transition: .5s all;
+        font-weight: bold;
+        border: solid 3px black;
+    }
+}
+#img-wrapper{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#img-container{
+    background-image: url('public/CyVelon.png');
+    background-position: center;
+    background-size: cover;
+    --size: 60vh;
+    border-radius: 100%;
+    border: solid 3px rgb(26, 25, 25);
+    height: var(--size);
+    width: var(--size);
+}

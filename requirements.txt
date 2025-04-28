@@ -1,0 +1,56 @@
+Dados de usuario:
+
+nível de ranking;
+tempo de leitura;
+livros lidos;
+sugestões propóstas;
+taxa de atenção;
+
+Livro:
+Título
+tempo estimado de leitura
+sinopse (+tikoteko)
+perguntas de atenção?
+reviews
+nota
+paginas
+classificação
+
+-//-
+
+ideias:
+
+ranking;
+sugestões;
+clubes;
+perguntas sobre o livro;
+
+-//- 
+Requerimentos do sistema:
+
+ADM:
+acesso às sugestões;
+cadastro de livros;
+
+CLIENTE:
+acesso aos proprios dados;
+
+CLIENTE (adm club):
+Determinação de leitura e escopo de tempo para a mesma;
+definir membros;
+
+CLIENTE (club):
+envio de reviews e leitura de outras reviews
+
+PÁGINAS:
+
+página de livro
+Home Page
+
+CLIENTE:
+Acesso aos próprios dados;
+Acesso aos livros;
+
+ADM:
+Acesso ao cadastro de livros
+

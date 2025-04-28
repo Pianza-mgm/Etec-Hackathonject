@@ -1,4 +1,4 @@
-@import url(../var.css);
+@import url(../Global/global-var.css);
 *{
     padding: 0;
     margin: 0;
@@ -7,6 +7,10 @@
     font-size: 25px;
     font-weight: bold;
     color: white;
+}
+svg, path{
+    height: 100%;
+    fill: white;
 }
 body{
     background-color: var(--light-bg-color);
@@ -45,8 +49,11 @@ main{
             --size: 125px;
             width: var(--size);
             height: var(--size);
-            border: solid 2px black;
+            border: solid 3px white;
             border-radius: 100%;
+            background-image: url(../../public/CyVelon.png);
+            background-position: center;
+            background-size: cover;
         }
     }
 
@@ -111,4 +118,56 @@ main{
     height: 100vh;
     width: 30vw;
     background-color: var(--theme-color2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #logo-container{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #logo{
+            --size: 300px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 100%;
+            background-image: url(../../public/CyVelon.png);
+            background-position: center;
+            background-size: cover;
+            transition: all .7s;
+        }
+        #logo:hover{
+            box-shadow: rgb(206, 206, 206) 0px 0px 5px 5px;
+            transition: all .7s;
+            --size: 310px;
+        }
+    }
+    #links{
+        height: 10%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+
+        .link-container{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .svg-container{
+                --size: 25px;
+                height: var(--size);
+                width: var(--size);
+            }
+            a{
+                display: inline;
+                margin-left: 10px;
+                font-size: 25px
+            }
+        }
+    }
 }
