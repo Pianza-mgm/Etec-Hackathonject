@@ -1,0 +1,114 @@
+@import url(../var.css);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--global-font-family);
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+body{
+    background-color: var(--light-bg-color);
+    display: flex;
+}
+main{
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#wrapper{
+    border: solid 3px rgb(0, 0, 0);
+    height: 95vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--theme-color2);
+    border-radius: 30px;
+
+    #info-part{
+        margin-top: 20px;
+        width: 100%;
+        height: 27.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        h2{
+            font-size: 50px;
+        }
+        #logo-container{
+            --size: 125px;
+            width: var(--size);
+            height: var(--size);
+            border: solid 2px black;
+            border-radius: 100%;
+        }
+    }
+
+    #form-container{
+        width: 92.5%;
+
+        form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            input{
+                width: 100%;
+                height: 55px;
+                border-radius: 10px;
+                border: solid 2px black;
+                padding-left: 15px;
+                background: var(--soft-theme-color);
+                color: black;
+            }
+            button{
+                border-radius: 5px;
+                background-color: var(--dark-bg-color);
+                width: 40%;
+                height: 50px;
+                border: solid 2px black;
+                color: var(--theme-color);
+            }
+            button:hover{
+                background: var(--light-bg-color);
+                transition: all .2s;
+                cursor: pointer;
+            }
+            #msg{
+                font-size: 20px;
+                color: var(--soft-theme-color);
+            }
+        }
+    }
+    #log-in{
+        height: 5%;
+        display: flex;
+        align-items: end;
+        margin-bottom: 15px;
+        font-size: 20px;
+        a{
+            font-size: 20px;
+            margin-left: 5px;
+            color: black;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+    }
+}
+/*
+#info-part, #form-container, #log-in{
+    border: solid 2px black;
+}*/
+#side-bar{
+    height: 100vh;
+    width: 30vw;
+    background-color: var(--theme-color2);
+}

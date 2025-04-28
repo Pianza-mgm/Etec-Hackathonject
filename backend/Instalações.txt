@@ -1,5 +1,6 @@
-npm i -D typescript @types/bcryptjs @types/node @types/express @types/cors prisma ts-node-dev
-npm i express cors bcryptjs @prisma/client
+npm i -D typescript @types/bcryptjs @types/node @types/express @types/cors @types/cookie-parser @types/jsonwebtoken prisma ts-node-dev 
+npm i express cors bcryptjs @prisma/client jsonwebtoken cookie-parser
+
 npx prisma init
 
 at package.json{

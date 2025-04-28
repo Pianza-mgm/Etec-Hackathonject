@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,100&display=swap');
+:root {
+  --global-font-family: 'Roboto', Avenir, Helvetica, Arial, sans-serif;
+  
+  --theme-color: rgb(9, 192, 113);
+  --theme-color2: #083E39;
+  --dark-bg-color: rgb(41, 50, 45);
+  --light-bg-color: #D9D9D9;
+  --soft-theme-color: #CDE6E6;
+}
