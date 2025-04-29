@@ -7,7 +7,6 @@
     color: white;
 }
 body{
-    overflow-y: hidden;
     height: 100vh;
 }
 main{
@@ -25,7 +24,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 50%;
+    height: 65%;
     h1{
         color: var(--theme-color);
         font-size: 60px;
@@ -34,8 +33,13 @@ main{
     p{
         color: black;
         font-size: 20px;
+        text-align: justify;
     }
-    a{
+    #slogan{
+        color: var(--dark-text-theme-color);
+        font-weight: bolder;
+    }
+    #tsx-btn div{
         margin-top: 50px;
         width: 14vw;
         height: 8vh;
@@ -46,10 +50,10 @@ main{
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        font-size: 30px;
+        font-size: 25px;
         transition: .5s all;
     }
-    a:hover{
+    #tsx-btn div:hover{
         background-color: var(--theme-color);
         color: black;
         width: 14.5vw;

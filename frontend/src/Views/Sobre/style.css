@@ -18,6 +18,8 @@ main{
     height: 100%;
     width: 30%;
     border: solid black 2px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 #title{
     height: 15%;
@@ -31,8 +33,9 @@ main{
 }
 #content{
     height: 85%;
-    padding: 30px 15px;
+    padding: 30px 20px;
     font-size: 25px;
-    background: rgb(106, 185, 173);
+    background: rgb(48, 115, 105);
     text-align: justify;
+    color: white;
 }

@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="src/Global/global-var.css">
+    <script type="module" src="src/Global/Elements.tsx"></script>
+    <script type="module" src="App.tsx"></script>
     <title>Home</title>
   </head>
   <body>
-    <iframe src="src/Global/header.html" frameborder="0" width="100%" height="100%"></iframe>
+    <div id="tsx-header"></div>
     <main>
       <div id="content-wrapper" class="wrapper">
         <h1>Seja Bem Vindo ao CyVelon!</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit praesentium illo aliquid cum facilis, veniam ut autem impedit doloribus eos deserunt tenetur cumque earum laudantium expedita perferendis, sunt, ratione ipsam!</p>
-        <a href="src/Views/LogIn/index.html">Começar</a>
+        <p>A criação deste software surgiu da necessidade de incentivar a leitura, reconhecendo sua importância fundamental. Nos tempos atuais, a tecnologia, embora repleta de benefícios, também se tornou uma das principais causas de distrações e leituras superficiais. Nosso projeto propõe utilizar a própria tecnologia como aliada, promovendo o hábito da leitura por meio de uma biblioteca digital. Nela, diversas obras nacionais poderão ser compartilhadas, além de contar com um sistema de avaliações e sugestões para aprimoramento contínuo da plataforma.<br><br><p id="slogan">"Cada leitura conta. Cada contribuição transforma."</p></p>
+        <div id="tsx-btn"  style="cursor: pointer;"></div>
       </div>
       <div id="img-wrapper" class="wrapper">
         <div id="img-container"></div>
       </div>
     </main>
-    <iframe style="height: 10vh;" src="src/Global//footer.html" frameborder="0" width="100%" height="100%"></iframe>
+    <div id="tsx-footer"></div>
   </body>
 </html>

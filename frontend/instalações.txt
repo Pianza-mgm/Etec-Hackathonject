@@ -1,1 +1,3 @@
 npm create vite@latest (React + Vite + Typescript)
+npm install react-router-dom
+npm install -D @types/react-router-dom
