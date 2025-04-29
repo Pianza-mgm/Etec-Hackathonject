@@ -4,12 +4,12 @@ import axios from 'axios';
 
 function App() {
 
-    const [form, setForm] = useState({ username: '', email: '', password: '', passwordConfirm: '' });
+    const [form, setForm] = useState({ username: '', email: '', password: ''});
     const [message, setMessage] = useState('');
     const handleSubmit = async (e: React.FormEvent) => { 
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3000/login', form);
+            const res = await axios.post('http://localhost:3000/login', form, { withCredentials: true});
             setMessage(res.data.message);
         } catch (err: any) {
             setMessage(err.response?.data?.message || 'Algum dado foi inserido incorretamente');
@@ -21,7 +21,7 @@ function App() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Nome" onChange={handleChange} />
+            <input type="text" name="username" placeholder="Nome" onChange={handleChange} />
             <input type="email" name="email" placeholder="Email" onChange={handleChange} />
             <input type="password" name="password" placeholder="Senha" onChange={handleChange} />
             <button type="submit">Entrar</button>

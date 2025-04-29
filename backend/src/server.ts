@@ -1,8 +1,8 @@
 import express, { Express, Router, Request, Response } from 'express';
-const app : Express = express();
+export const app : Express = express();
 
 import { PrismaClient } from '@prisma/client';
-const prisma : PrismaClient = new PrismaClient();
+export const prisma : PrismaClient = new PrismaClient();
 
 import jwt from 'jsonwebtoken';
 import cookieParser from 'cookie-parser';
@@ -10,7 +10,10 @@ import cors from 'cors';
 import bcrypt from 'bcryptjs';
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
 app.use(cookieParser());
 const PORT: Number = Number(process.env.PORT) || 3000;
 const JWT_SECRET = 'é_a_prr_do_Lorax';
@@ -33,6 +36,7 @@ app.post('/signup', async (req: Request, res: Response) => {
                 name,
                 email,
                 password: hashedPassword,
+                ranking_level: 0
             },
         });
 
@@ -46,12 +50,47 @@ app.post('/signup', async (req: Request, res: Response) => {
 // Login
 app.post('/login', async (req, res) => {
     const { username, email, password } = req.body;
+    
     const user = await prisma.user.findFirst({
-        where: { email: email, password : password },
-        select: {id: true, name: true, email: true}
+        where: { email: email },
+        select: {
+            id: true,
+            name: true, 
+            email: true, 
+            atention_rate: true, 
+
+            book_sugestions: {
+                select:{
+                    title: true,
+                    author: true,
+                    cover: true,
+                    sugestion_overview: true
+                }
+            },
+            clubs: {
+                select:{
+                    id: true,
+                    title: true,
+                }
+            }, 
+            reviews: {
+                select:{
+                    content: true,
+                    book:{
+                        select:{
+                            title: true,
+                        }
+                    }
+                }
+            }, 
+            books_read:{
+                select:{id: true}
+            }
+        }
     });
+    
     if (!user) {
-        return res.status(401).json({ message: 'Credenciais inválidas' });
+        return res.status(401).json({ message: 'Credenciais Inválidas' });
     }
 
     // Criar um token JWT

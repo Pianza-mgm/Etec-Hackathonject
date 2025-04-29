@@ -14,8 +14,60 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  name  String
-  email String @unique
-  password String @unique
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  name                 String
+  email                String  @unique
+  password             String
+
+  ranking_level        Int
+  atention_rate        Float?
+
+  clubs                Club[]
+  book_sugestions      Book_Sugestion[]
+  books_read           Book[]
+  reviews              Review[]
+}
+model Club{
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  title                String  @unique
+  access_key           String
+
+  user                 User    @relation(fields: [userFK], references: [id])
+  userFK               String  @db.ObjectId
+}
+model Book{
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  title                String  @unique
+  author               String
+  cover                String
+
+  read_time_estimeated Int
+  synopsis             String  @unique
+  atention_questions   Boolean
+  rating               Int
+  pages                Int
+
+  user                 User    @relation(fields: [userFK], references: [id])
+  userFK               String  @db.ObjectId
+
+  reviews              Review[]
+}
+model Review{
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  content              String  @unique
+
+  book                 Book    @relation(fields: [bookFK], references: [id])
+  bookFK               String  @db.ObjectId
+  user                 User    @relation(fields: [userFK], references: [id])
+  userFK               String  @db.ObjectId
+}
+model Book_Sugestion{
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  title                String  @unique
+  author               String
+  cover                String
+  sugestion_overview   String  @unique
+
+  user                 User    @relation(fields: [userFK],references: [id])
+  userFK               String  @db.ObjectId
 }

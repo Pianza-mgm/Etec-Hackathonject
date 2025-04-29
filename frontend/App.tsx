@@ -5,7 +5,7 @@ import axios from 'axios';
 function App() {
     const HandleClick = async() => {
         try{
-            var userData = await axios.get('http://localhost:3000/profile');
+            var userData = await axios.get('http://localhost:3000/profile', { withCredentials: true });
             window.location.href = '/src/Views/Client/Main/index.html';
         }
         catch{
