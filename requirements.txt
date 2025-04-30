@@ -1,12 +1,15 @@
-Dados de usuario:
-
+USER:
+username;
+email;
+password;
 nível de ranking;
 tempo de leitura;
 livros lidos;
 sugestões propóstas;
 taxa de atenção;
+clubes;
 
-Livro:
+BOOK:
 Título
 tempo estimado de leitura
 sinopse (+tikoteko)
@@ -15,6 +18,10 @@ reviews
 nota
 paginas
 classificação
+
+CLUB:
+
+REVIEW:
 
 -//-
 

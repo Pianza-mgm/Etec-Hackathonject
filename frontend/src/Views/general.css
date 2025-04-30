@@ -104,7 +104,7 @@ main{
         a{
             font-size: 20px;
             margin-left: 5px;
-            color: black;
+            color: rgb(0, 0, 0);
             text-decoration: none;
             font-weight: bolder;
         }

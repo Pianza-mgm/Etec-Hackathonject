@@ -10,8 +10,9 @@ function App() {
         e.preventDefault();
         try {
             if(form.password === form.passwordConfirm){
-                const res = await axios.post('http://localhost:3000/signup', form);
-                setMessage(res.data.message);
+                const res = await axios.post('http://localhost:3000/signup', form, {withCredentials: true});
+                await axios.post('http://localhost:3000/login', res.data, { withCredentials: true })
+                window.location.href = '../Client/Main/index.html'
             }else{
                 setMessage('Senhas Incongruentes');
             }

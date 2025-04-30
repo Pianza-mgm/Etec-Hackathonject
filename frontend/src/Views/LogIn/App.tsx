@@ -9,8 +9,8 @@ function App() {
     const handleSubmit = async (e: React.FormEvent) => { 
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3000/login', form, { withCredentials: true});
-            setMessage(res.data.message);
+            await axios.post('http://localhost:3000/login', form, { withCredentials: true });
+            window.location.href = '../Client/Main/index.html'
         } catch (err: any) {
             setMessage(err.response?.data?.message || 'Algum dado foi inserido incorretamente');
         }

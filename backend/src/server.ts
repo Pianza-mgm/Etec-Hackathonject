@@ -94,7 +94,17 @@ app.post('/login', async (req, res) => {
     }
 
     // Criar um token JWT
-    const token = jwt.sign({ id: user.id, username: user.name }, JWT_SECRET, {
+    const token = jwt.sign({ 
+        id: user.id, 
+        username: user.name,
+        email: user.email, 
+        atention_rate: user.atention_rate ,
+        book_sugestions: user.book_sugestions,
+        clubs: user.clubs,
+        reviews: user.reviews,
+        books_read: user.books_read
+    }, 
+    JWT_SECRET, {
         expiresIn: '1h',
     });
     // Enviar o token em um cookie HttpOnly
@@ -107,7 +117,11 @@ app.post('/login', async (req, res) => {
 });
 // Logout
 app.post('/logout', (_req, res) => {
-    res.clearCookie('token');
+    res.clearCookie('token', {
+        httpOnly: true,
+        secure: false,
+        sameSite: 'lax',
+    });
     return res.json({ message: 'Logout realizado' });
 });
 // Get current user data
